@@ -169,7 +169,7 @@ tasks:
       - for: { var: IMAGES, split: "\n", as: IMG }
         task: image-save
         vars:
-          SRC: "docker.io/{{.IMG}}"
+          SRC: "{{.IMG}}"
           TGT:
             sh: echo ~/.ops/{{OS}}-{{ARCH}}/images/kind/$(echo {{.IMG}} | /usr/bin/base64 -w0)
 
