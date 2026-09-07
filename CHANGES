@@ -10,4 +10,5 @@ Most notably changes for the first release
 
 - entirely rewritten the entire build system, documented in BUILD.md - governed by triggering by tags and manually
 
-- now there is one python:sys image for executing system actions
+- now there is one python:sys image for executing system actions, the preloader preloads the images also from non-apache sources and preload the python:sys image
+
