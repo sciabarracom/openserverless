@@ -165,7 +165,7 @@ tasks:
       dir: runtimes
       vars:
         IMAGES:
-          sh: jq -r '.runtimes[][] | select(.default == true) | "\(.image.prefix)/\(.image.name):\(.image.tag)"'   runtimes.json | grep -v php
+          sh: jq -r '.runtimes[][] | select(.default == true or .kind == "python:sys")  | "\(.image.prefix)/\(.image.name):\(.image.tag)"'   runtimes.json | grep -v php
       cmds:
       - for: { var: IMAGES, split: "\n", as: IMG }
         task: image-save
